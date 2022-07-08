@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'maven-publish'
     id('com.github.hierynomus.license') version '0.16.1'
-    id('io.github.spencerpark.jupyter-kernel-installer') version '3.0.0-SNAPSHOT'
+    id('io.github.spencerpark.jupyter-kernel-installer') version '9001'
     id('com.github.jk1.dependency-license-report')
 }
 
@@ -46,11 +46,6 @@ licenseReport {
     configurations = ['compile']
 }
 
-compileJava {
-    sourceCompatibility = 1.9
-    targetCompatibility = 1.9
-}
-
 configurations {
     shade
     // transitive true to make sure that the dependencies of shade dependencies also get shaded
@@ -61,10 +56,6 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven {
-        url = 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
-    mavenLocal()
 }
 
 dependencies {

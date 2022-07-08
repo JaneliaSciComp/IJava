@@ -4,6 +4,11 @@
 
 ![display-img](docs/img/display-img.png)
 
+**Note**: This is a fork of the original [SpencerPark/IJava](https://github.com/SpencerPark/IJava) with Java 17 compatible gradle setup. For ease of use, a modified version of the [SpencerPark/Jupyter-kernel-installer-gradle](https://github.com/SpencerPark/Jupyter-kernel-installer-gradle) with Java 17 support is included in the [`installer`](installer) directory. The changes in this fork are also submitted via pull requests SpencerPark/Jupyter-kernel-installer-gradle#14 and SpencerPark/IJava#134. This fork will become obsolete if/when these pull requests are merged. To install a the kernel from this fork, run
+``` shell
+./gradlew installKernel --prefix=/path/to/installation/prefix
+```
+
 A [Jupyter](http://jupyter.org/) kernel for executing Java code. The kernel executes code via the new [JShell tool](https://docs.oracle.com/javase/9/jshell/introduction-jshell.htm). Some of the additional commands should be supported as needed via a syntax similar to the ipython magics.
 
 The kernel is fully functional. Check out the [list of features](#features) further down in the README. Any requests for new ones or prioritizing current requests are welcomed in the [issues](https://github.com/SpencerPark/IJava/issues) along with bug requests, installation help, or other questions.

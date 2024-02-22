@@ -60,13 +60,16 @@ configurations {
 }
 
 repositories {
+    maven {
+        url = 'https://maven.scijava.org/content/groups/public'
+    }
     mavenCentral()
 }
 
 dependencies {
     shade group: 'io.github.spencerpark', name: 'jupyter-jvm-basekernel', version: '2.3.0'
 
-    shade group: 'org.apache.ivy', name: 'ivy', version: '2.5.2'
+    shade group: 'org.janelia.ivy', name: 'ivy', version: '2.5.3-janelia-202402201930'
     //shade group: 'org.apache.maven', name: 'maven-settings-builder', version: '3.6.0'
     shade group: 'org.apache.maven', name: 'maven-model-builder', version: '3.6.0'
 

@@ -86,6 +86,11 @@ public class MavenResolver {
     private static final String JAR_TYPE = "jar";
 
     /**
+     * The other ivy artifact type corresponding to a binary artifact for a module.
+     */
+    private static final String BUNDLE_TYPE = "bundle";
+
+    /**
      * The ivy artifact type corresponding to a source code artifact for a module. This
      * is still usually a ".jar" file but that corresponds to the "ext" not the "type".
      */
@@ -290,7 +295,7 @@ public class MavenResolver {
         }
 
         return Arrays.stream(resolved.getAllArtifactsReports())
-                .filter(a -> JAR_TYPE.equalsIgnoreCase(a.getType()))
+                .filter(a -> JAR_TYPE.equalsIgnoreCase(a.getType()) || BUNDLE_TYPE.equalsIgnoreCase(a.getType()))
                 .map(ArtifactDownloadReport::getLocalFile)
                 .collect(Collectors.toList());
     }
